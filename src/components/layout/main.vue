@@ -16,9 +16,9 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  background: rgba(255, 255, 255, 0.103);
+  background: #ffffffe0;
   background-image: url('../../assets/img/money-bg.jpg');
-  background-blend-mode: multiply;
+  background-blend-mode: lighten;
   display: flex;
   align-items: center;
   height: 100%;
