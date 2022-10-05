@@ -21,7 +21,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/style/variables.scss';
+@import '../../assets/style/common.scss';
 .header {
+  font-family: $headingFontFamily;
   padding: 20px;
   background: linear-gradient(to top, $second 0%, transparent 70%),
     linear-gradient(to bottom, transparent, rgba($white, 0.4) 70%), $third;
@@ -48,6 +50,7 @@ export default {
 
   .title {
     color: $white;
+    text-transform: uppercase;
   }
   .icon {
     margin-bottom: 20px;
