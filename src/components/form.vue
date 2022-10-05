@@ -7,6 +7,7 @@
         type="number"
         step=".01"
         v-model="price"
+        @input="restrictDecimal"
       />
     </div>
     <div class="form__percentage">
@@ -32,9 +33,9 @@ export default {
     };
   },
   methods: {
-    // restrictDecimal() {
-    //   this.price = this.price.match(/^\d+\.?\d{0,2}/);
-    // },
+    restrictDecimal() {
+      this.price = this.price.match(/^\d+\.?\d{0,2}/);
+    },
   },
   computed: {
     calcTip: function () {
@@ -45,7 +46,11 @@ export default {
       }
     },
     calcTotal: function () {
+      if (this.price !== "" && this.price !== null) {
         return parseFloat(parseFloat(this.price) + parseFloat(this.calcTip)).toFixed(2);
+      } else {
+        return 0;
+      }
       
     },
   },
